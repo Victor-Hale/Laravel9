@@ -74,4 +74,13 @@ if (!function_exists('json_success_fail')) {
             return json_fail($msg1 === null ? '操作失败！' : $msg1);
         }
     }
+
+    function is_error($str){
+            $prefix = substr($str, 0, 5); // 截取字符串中的前四个字符
+            if ($prefix === 'error') {
+                return true;
+            } else {
+                return false;
+            }
+    }
 }
