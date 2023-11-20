@@ -76,6 +76,9 @@ if (!function_exists('json_success_fail')) {
     }
 
     function is_error($str){
+           if (!is_string($str)) {
+            return false;
+             }
             $prefix = substr($str, 0, 5); // 截取字符串中的前四个字符
             if ($prefix === 'error') {
                 return true;
